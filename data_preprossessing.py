@@ -3,126 +3,87 @@ Cristina Capdevila Choy, February 2020
 """
 # !/usr/bin/python3
 import pandas as pd
-import json as js
 import os
+import json
+import csv
+import sys
+
+
 # Global variables to control script flow
 input_default_path = "data/breastcancer.json"
 tmp_path = "tmp"
 
 
-def parseXML(file):
-    """
-    Parse XML file.
-    Function to parse the XML file with path given as argument.
 
-    Args:
-        - file: string with path of xml file to parse.
-    Returns:
-        - sentences: list of xml elements of tag name "sentence".
-    """
-    xml = parse(file)
-    sentences = xml.getElementsByTagName("sentence")
-    return sentences
+##
+# Convert to string keeping encoding in mind...
+##
+def to_string(s):
+    try:
+        return str(s)
+    except:
+        # Change the encoding type if needed
+        return s.encode('utf-8')
 
 
-def get_sentence_info(sentence):
-    """
-    Get sentence info.
-    Function to extract Id and Text from Sentence XML node.
-    Args:
-        - sentence: xml node object with type sentence node.
-    Returns:
-        - (id, text): tuple with id strng and text string.
-    """
-    id = sentence.getAttribute("id")
-    text = sentence.getAttribute("text")
-    return (id, text)
+def reduce_item(key, value):
+    global reduced_item
 
+    # Reduction Condition 1
+    if type(value) is list:
+        i = 0
+        for sub_item in value:
+            reduce_item(key + '_' + to_string(i), sub_item)
+            i = i + 1
 
-def tokenize(s):
-    """
-    Tokenize string.
-    Function to tokenize text into words (tokens). Downloads default NLTK
-    tokenizer if not in machine.
-    Args:
-        - s: string with sentence to tokenize.
-    Returns:
-        - tokens: list of tuples (token, start-index, end-index)
-    """
-    text = sub(r"[(,.:;'\")]+", " ", s)
-    tokenizer = Tokenizer()
-    spans = tokenizer.span_tokenize(text)
-    tokens = tokenizer.tokenize(text)
-    tokens = [(t, s[0], s[1]) for t, s in zip(tokens, spans)]
-    return tokens
+    # Reduction Condition 2
+    elif type(value) is dict:
+        sub_keys = value.keys()
+        for sub_key in sub_keys:
+            reduce_item(key + '_' + to_string(sub_key), value[sub_key])
 
-
-def extract_entities(token_list):
-    """
-    """
-    # Common drug suffixes
-    with open("data/Rules/sufixes.txt", "r") as fp:
-        terms = [s.replace("\n", "") for s in fp.readlines()]
-    ents = []
-    for i, token_t in enumerate(token_list):
-        token, start, end = token_t
-        type = None
-        # Rules to detect if token is entity
-        if token.isupper() and len(token) > 4:
-            # Uppercase brand names
-            # Avoid numerals and acronyms by limiting length
-            type = "brand"
-        for term in terms:
-            # If common term in token, probably drug
-            if term in token:
-                type = "drug"
-                break
-        if type is not None:
-            ent = {"name": token, "offset": f"{start}-{end}", "type": type}
-            ents.append(ent)
-    return ents
-
-
-def output_entities(id, ents, outf):
-    """
-    Args:
-        - id: string with document id.
-        - ents: list of entities dictionaries with {name, offset, type}
-        - outf: path for output file
-    """
-    with open(outf, "a") as fp:
-        for ent in ents:
-            offset = ent["offset"]
-            name = ent["name"]
-            type = ent["type"]
-            txt = f"{id}|{offset}|{name}|{type}\n"
-            fp.write(txt)
-
-
-def evaluate(inputdir, outputfile):
-    """
-    Evaluate results of NER model.
-    Receives a data directory and the filename for the results to evaluate.
-    Prints statistics about the predicted entities in the given output file.
-    NOTE: outputfile must match the pattern: task9.1_NAME_NUMBER.txt
-
-    Args:
-        - inputdir: string with folder containing original XML.
-        - outputfile: string with file name with the entities produced by your
-          system (created by output entities).
-    Returns:
-        - Jar return object.
-    """
-    return os.system(f"java -jar eval/evaluateNER.jar {inputdir} {outputfile}")
+    # Base Condition
+    else:
+        reduced_item[to_string(key)] = to_string(value)
 
 
 def JSON_to_CSV(inputdir, outputfile):
-    """
-    """
-    df = js.read_json(inputdir)['result']['hits']['hit']
-    df = pd.DataFrame(eval(str(df)))
-    df.to_csv(outputfile, index=None)
-    return "DONE!"
+    # Reading arguments
+    node = 'result'
+    json_file_path = inputdir
+    csv_file_path = outputfile
+
+    fp = open(json_file_path, 'r')
+    json_value = fp.read()
+    raw_data = json.loads(json_value)
+    fp.close()
+
+    try:
+        data_to_be_processed = raw_data[node]['hits']['hit']
+
+    except:
+        data_to_be_processed = raw_data
+
+    processed_data = []
+    header = []
+    for item in data_to_be_processed:
+        reduced_item = {}
+        reduce_item(node, item)
+
+        header += reduced_item.keys()
+
+        processed_data.append(reduced_item)
+
+    header = list(set(header))
+    header.sort()
+
+    with open(csv_file_path, 'w+') as f:
+        writer = csv.DictWriter(f, header, quoting=csv.QUOTE_ALL)
+        writer.writeheader()
+        for row in processed_data:
+            writer.writerow(row)
+
+    print("Just completed writing csv file with %d columns" % len(header))
 
 
 if __name__ == "__main__":
@@ -138,5 +99,6 @@ if __name__ == "__main__":
     print(outputfile)
     if os.path.exists(outputfile):
         os.remove(outputfile)
+        print(f"{outputfile} file removed")
     # Run CSV to json
     JSON_to_CSV(inputdir, outputfile)
