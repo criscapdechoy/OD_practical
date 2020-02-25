@@ -33,7 +33,7 @@ def reduce_item(key, value):
     if type(value) is list:
         i = 0
         for sub_item in value:
-            reduce_item(key + '_' + to_string(i), sub_item)
+            reduce_item(key , sub_item)
             i = i + 1
 
     # Reduction Condition 2
@@ -58,15 +58,14 @@ def JSON_to_CSV(inputdir, outputfile):
     raw_data = json.loads(json_value)
     fp.close()
 
-    try:
-        data_to_be_processed = raw_data[node]['hits']['hit']
+    data_to_be_processed = raw_data[node]['hits']['hit']
 
-    except:
-        data_to_be_processed = raw_data
 
     processed_data = []
     header = []
     for item in data_to_be_processed:
+        global reduced_item
+
         reduced_item = {}
         reduce_item(node, item)
 
