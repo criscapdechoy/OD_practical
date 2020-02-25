@@ -28,6 +28,7 @@ def to_string(s):
 
 def reduce_item(key, value):
     global reduced_item
+    global reduce
 
     # Reduction Condition 1
     if type(value) is list:
@@ -44,7 +45,8 @@ def reduce_item(key, value):
 
     # Base Condition
     else:
-        reduced_item[to_string(key)] = to_string(value)
+        reduce[to_string(key)] = to_string(value)
+        reduced_item.append(reduce)
 
 
 def JSON_to_CSV(inputdir, outputfile):
@@ -65,13 +67,15 @@ def JSON_to_CSV(inputdir, outputfile):
     header = []
     for item in data_to_be_processed:
         global reduced_item
+        global reduce
 
-        reduced_item = {}
+        reduced_item = []
+        reduce={}
         reduce_item(node, item)
 
-        header += reduced_item.keys()
-
-        processed_data.append(reduced_item)
+        header += reduce.keys()
+        for element in reduced_item:
+            processed_data.append(element)
 
     header = list(set(header))
     header.sort()
