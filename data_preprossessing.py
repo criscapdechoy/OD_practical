@@ -8,49 +8,10 @@ import json
 import csv
 import sys
 
-
-# Global variables to control script flow
-input_default_path = "data/breastcancer.json"
-tmp_path = "tmp"
-
-
-
-##
-# Convert to string keeping encoding in mind...
-##
-def to_string(s):
-    try:
-        return str(s)
-    except:
-        # Change the encoding type if needed
-        return s.encode('utf-8')
-
-
-def reduce_item(key, value):
-    global reduced_item
-    global reduce
-
-    # Reduction Condition 1
-    if type(value) is list:
-        i = 0
-        for sub_item in value:
-            reduce_item(key , sub_item)
-            i = i + 1
-
-    # Reduction Condition 2
-    elif type(value) is dict:
-        sub_keys = value.keys()
-        for sub_key in sub_keys:
-            reduce_item(key + '_' + to_string(sub_key), value[sub_key])
-
-    # Base Condition
-    else:
-        reduce[to_string(key)] = to_string(value)
-        reduced_item.append(reduce)
+input_file_path = 'data/breastcancer.json'
 
 
 def JSON_to_CSV(inputdir, outputfile):
-    # Reading arguments
     node = 'result'
     json_file_path = inputdir
     csv_file_path = outputfile
@@ -61,40 +22,23 @@ def JSON_to_CSV(inputdir, outputfile):
     fp.close()
 
     data_to_be_processed = raw_data[node]['hits']['hit']
-
-
-    processed_data = []
-    header = []
-    for item in data_to_be_processed:
-        global reduced_item
-        global reduce
-
-        reduced_item = []
-        reduce={}
-        reduce_item(node, item)
-
-        header += reduce.keys()
-        for element in reduced_item:
-            processed_data.append(element)
-
-    header = list(set(header))
-    header.sort()
-
-    with open(csv_file_path, 'w+') as f:
-        writer = csv.DictWriter(f, header, quoting=csv.QUOTE_ALL)
-        writer.writeheader()
-        for row in processed_data:
-            writer.writerow(row)
-
-    print("Just completed writing csv file with %d columns" % len(header))
+    df = pd.json_normalize(data_to_be_processed, max_level=2)
+    for i in range(len(df)):
+        if type(df['info.authors.author'][i]) != type(list()):
+            df['info.authors.author'][i] = [df['info.authors.author'][i]]
+    df = df.rename(columns={"@score":"score","@id":"id","url":"url_num","info.authors.author":"author","info.title":"title",
+                       "info.year":"year","info.type":"pub_type","info.key":"key","info.ee":"ee","info.url":"url",
+                       "info.venue":"venue","info.volume":"vol","info.number":"num","info.pages":"pages",
+                       "info.doi":"doi", "info.publisher":"publisher"
+                       })
+    df = df.fillna("Null")
+    df.to_csv(csv_file_path)
 
 
 if __name__ == "__main__":
-    inputdir = input_default_path
+    inputdir = input_file_path
+
     # Assign output file for output CSV
-    if not os.path.exists(tmp_path):
-        os.makedirs(tmp_path)
-        print(f"[INFO] Created a new folder {tmp_path}")
     # Evaluation output file config
     head, tail = os.path.split(inputdir)
     tail = '.'.join((tail.split('.')[0], 'csv'))
