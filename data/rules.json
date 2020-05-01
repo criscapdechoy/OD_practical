@@ -1,0 +1,69 @@
+{"Collections":[
+    {"sheetName":"Sheet 1","startColumn":"A","endColumn":"P","startRow":"3","endRow":"30","comment":"",
+        "rule":"Individual: @N*\nTypes: City\nFacts: reviews @K*","active":true},
+    {"sheetName":"Sheet 1","startColumn":"A","endColumn":"P","startRow":"3","endRow":"30","comment":"",
+        "rule":"Individual: @C*\nTypes: Organization","active":true},
+    {"sheetName":"Sheet 1","startColumn":"A","endColumn":"P","startRow":"3","endRow":"30","comment":"",
+    "rule":"Individual: @B*\nTypes: Person, Author\nFacts: publish @K*, affiliatedWith @C*","active":true}, 
+    {"sheetName":"Sheet 1","startColumn":"A","endColumn":"P","startRow":"3","endRow":"30","comment":"",
+        "rule":"Individual: @O*\nTypes: Person, Reviewer\nFacts: reviews @K*","active":true}, 
+    {"sheetName":"Sheet 1","startColumn":"A","endColumn":"P","startRow":"3","endRow":"30","comment":"",
+        "rule":"Individual: @E*\nTypes: @J*, @Q* \n Facts: edition @M*(xsd:integer), volume @F*(xsd:integer), issue @P*(xsd:integer)","active":true},
+    {"sheetName":"Sheet 1","startColumn":"A","endColumn":"P","startRow":"3","endRow":"30","comment":"",
+        "rule":"Individual: @K*\nTypes: Paper, @L* \nFacts: publishedIn @E*, heldIn @N*, fromYear @H*(xsd:integer), pages @G*, hasDoi @A*","active":true}
+    ]}
+
+
+
+    a doi +
+    b author_name +
+    c affiliations+
+    d title
+    e venue +
+    f vol +
+    g pages +
+    h year +
+    i subclassOf 
+    j publishedIn +
+    k paper_id +
+    l paper_prop
+    m edition +
+    n heldIn
+    o reviewedBy +
+    p issue +
+
+
+    Journal
+    OpenAccessJournal
+    Organization
+    Paper
+    DemoPaper
+    FullPaper
+    SurveyPaper
+    Review
+    ShortPaper
+    Person
+    Author +
+    Reviewer +
+    Proceeding
+    ConferenceProceeding
+        SubclassOf:@
+    owl:topObjectProperty
+    affiliatedWith
+    heldIn
+    peopleAffiliated
+    peopleInvolved
+    authoredBy +
+    reviewedBy +
+    publishedIn +
+    publishedPapers +
+    publish +
+    reviews +
+    
+    owl:topDataProperty
+    hasDoi +
+    edition +
+    issue +
+    volume +
+    fromYear +
+    pages +

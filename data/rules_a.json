@@ -1,0 +1,2 @@
+{"Collections":[{"sheetName":"Sheet 1","startColumn":"A","endColumn":"P","startRow":"3","endRow":"+","comment":"","rule":"Individual: @B*\nTypes: Author\nFacts: publish @K*, affiliatedWith @C*","active":true}]}
+    

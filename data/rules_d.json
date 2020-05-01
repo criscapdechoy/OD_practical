@@ -1,0 +1,1 @@
+{"Collections":[{"sheetName":"Sheet 1","startColumn":"A","endColumn":"P","startRow":"3","endRow":"+","comment":"","rule":"Individual: @K*\nTypes: @L* \nFacts: publishedIn @E*, heldIn @N*, fromYear @H*(xsd:integer), pages @G*, hasDoi @A*","active":true}]}

@@ -1,0 +1,2600 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#"
+     xml:base="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication"
+     xmlns:od="http://www.semanticweb.org/lab3/ontologies/2020/3/paperdatabase#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:researchpublication="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#affiliatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#affiliatedWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#peopleAffiliated"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#authoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#authoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#peopleInvolved"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#publish"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#heldIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#heldIn">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#holdEvents"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#holdEvents -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#holdEvents">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#peopleAffiliated -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#peopleAffiliated">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#peopleInvolved -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#peopleInvolved"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#publish -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#publish">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#relatedTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#publishedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#publishedIn">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#publishedPapers"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Journal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#publishedPapers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#publishedPapers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Journal"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#relatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#relatedTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#reviewedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#reviewedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#peopleInvolved"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#reviews"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#reviews -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#reviews">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#relatedTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#edition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#edition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#fromYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#fromYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#hasDoi -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#hasDoi">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#issue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#issue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Journal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#pages -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#pages">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#volume -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#volume">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Journal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ResearchThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Journal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Journal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ResearchThing"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#OpenAccessJournal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#OpenAccessJournal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Journal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ResearchThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ResearchThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ResearchThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ResearchThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ResearchThing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ResearchThing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SurveyPaper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AAMAS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AAMAS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ACMTIT -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ACMTIT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Journal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#OpenAccessJournal"/>
+        <issue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</issue>
+        <volume rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</volume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AarhusUniversity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AarhusUniversity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AditiGupta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AditiGupta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBonn"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_62"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_63"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AlbertoLumbreras -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AlbertoLumbreras">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PolitecnicoDiMilano"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_59"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AlbrechtSchmidt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AlbrechtSchmidt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_62"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AlejandroJaimes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AlejandroJaimes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AarhusUniversity"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_54"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_59"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AlessandroFlammini -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AlessandroFlammini">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#LMUMunich"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_39"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AlexFrino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AlexFrino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfCambridge"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_42"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AmandeepDhir -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AmandeepDhir">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_48"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AristidesGionis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AristidesGionis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityCollegeLondon"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_54"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AtifAlamri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AtifAlamri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PolitecnicoDiMilano"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_40"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AudunJøsang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AudunJøsang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WeizmannInstituteOfScience"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_60"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AvinashGandhe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AvinashGandhe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PolitecnicoDiMilano"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_50"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Bar-IlanUniversity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Bar-IlanUniversity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BarbaraPoblete -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BarbaraPoblete">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfWarwick"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_45"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_65"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Barcelona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Barcelona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_43"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_58"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Beijing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Beijing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_40"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_50"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_66"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BenyuanLiu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BenyuanLiu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfEdinburgh"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_50"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BingLiu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BingLiu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversidadeDeLisboa"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_48"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BoleslawK.Szymanski -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BoleslawK.Szymanski">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ISTAustria"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BongwonSuh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BongwonSuh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ISTAustria"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_64"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BrunoGonçalves -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BrunoGonçalves">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfWarwick"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_39"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Brussels -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Brussels">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_59"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_65"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BuenosAires -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BuenosAires">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_41"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_55"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CSUR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CSUR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2013</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CardiffUniversity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CardiffUniversity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CarlosCastillo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CarlosCastillo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PolitecnicoDiMilano"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_45"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_54"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_62"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_65"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CharuC.Aggarwal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CharuC.Aggarwal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_51"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ColinBoyd -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ColinBoyd">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AarhusUniversity"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_60"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Copenhagen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Copenhagen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_48"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CécileParis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CécileParis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ISTAustria"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_66"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DSS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DSS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2007</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DanielGayo-Avello -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DanielGayo-Avello">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfZurich"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_47"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_2"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_50"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DavidLiau -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DavidLiau">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WeizmannInstituteOfScience"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_57"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DavidR.Gallagher -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DavidR.Gallagher">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBonn"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_42"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DennisKergl -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DennisKergl">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CardiffUniversity"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_41"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_55"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DerekRuths -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DerekRuths">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBristol"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_44"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ESA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ESA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</edition>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2017</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EcoleNormaleSuperieure -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EcoleNormaleSuperieure">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EduardoJ.Ruiz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EduardoJ.Ruiz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBirmingham"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_54"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Ee-PengLim -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Ee-PengLim">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PolitecnicoDiMilano"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_67"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_41"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_63"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EeroVainikko -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EeroVainikko">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_44"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EliBartov -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EliBartov">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDarmstadt"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_43"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EmilyA.Impett -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EmilyA.Impett">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_49"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EniMustafaraj -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EniMustafaraj">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#GrazUniversityOfTechnology"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_47"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FabioRojas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FabioRojas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBonn"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_61"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FilippoMenczer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FilippoMenczer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HebrewUniversityOfJerusalem"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_39"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#GiancarloFortino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#GiancarloFortino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBonn"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_40"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#GrazUniversityOfTechnology -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#GrazUniversityOfTechnology">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#GregoryToddWilliams -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#GregoryToddWilliams">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBonn"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HaraldSchoen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HaraldSchoen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDarmstadt"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_47"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HarshavardhanAchrekar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HarshavardhanAchrekar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SaarlandUniversity"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_50"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HebrewUniversityOfJerusalem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HebrewUniversityOfJerusalem">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HuinaMao -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HuinaMao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDarmstadt"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_53"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HuntAllcott -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HuntAllcott">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfWarwick"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_58"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2019</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEACMICASNAM -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEACMICASNAM">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2012</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEACMICASNAMASONAM -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEACMICASNAMASONAM">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEECCCWINFOCOMWKSHPS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEECCCWINFOCOMWKSHPS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEICISI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEICISI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEETICPSRTIEEETICSC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEETICPSRTIEEETICSC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2013</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ISTAustria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ISTAustria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ITUniversityOfCopenhagen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ITUniversityOfCopenhagen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IWCIP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IWCIP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IbrahimUysal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IbrahimUysal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_42"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IrisVilnai-Yavetz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IrisVilnai-Yavetz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_58"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Istanbul -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Istanbul">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_46"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_67"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JCS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JCS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Journal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#OpenAccessJournal"/>
+        <issue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</issue>
+        <volume rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</volume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JacobRatkiewicz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JacobRatkiewicz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WeizmannInstituteOfScience"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_39"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JamesAllan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JamesAllan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JianshuWeng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JianshuWeng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HebrewUniversityOfJerusalem"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_67"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JohanBollen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JohanBollen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#GrazUniversityOfTechnology"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_53"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_61"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JonM.Kleinberg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JonM.Kleinberg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversidadeDeLisboa"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_46"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JordiDelgado -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JordiDelgado">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBremen"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_55"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JosepM.Pujol -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JosepM.Pujol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDarmstadt"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_55"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JosephDiGrazia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JosephDiGrazia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversidadeDeLisboa"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_61"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JulienVelcin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JulienVelcin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfStuttgart"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_49"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JürgenPfeffer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JürgenPfeffer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityCollegeLondon"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_44"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#K.SuzanneBarber -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#K.SuzanneBarber">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RWTHAachen"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_2"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_57"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KULeuven -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KULeuven">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KarissaRaeMcKelvey -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KarissaRaeMcKelvey">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KULeuven"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_61"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KevinC.Almeroth -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KevinC.Almeroth">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_40"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KevinRobertCanini -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KevinRobertCanini">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfOxford"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_64"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KiyoakiShirai -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#KiyoakiShirai">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfWarwick"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_49"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#LMUMunich -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#LMUMunich">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#LiliYao -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#LiliYao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_64"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_65"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#London -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#London">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_60"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#LucileFaurel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#LucileFaurel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfWarwick"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_43"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MabrookS.Alrakhami -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MabrookS.Alrakhami">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ITUniversityOfCopenhagen"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_40"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MajedA.AlRubaian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MajedA.AlRubaian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RWTHAachen"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_40"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MalikMagdon-Ismail -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MalikMagdon-Ismail">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDarmstadt"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ManishBhide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ManishBhide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_57"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MarceloMendoza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MarceloMendoza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PolitecnicoDiMilano"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_45"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_65"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MarkK.Goldberg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MarkK.Goldberg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfStuttgart"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MarkSSmolinski -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MarkSSmolinski">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_43"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MarkusStrohmaier -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MarkusStrohmaier">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfCambridge"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_47"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MattDubin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MattDubin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_66"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MatthewGentzkow -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MatthewGentzkow">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBonn"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_58"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MatthewMohebbi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MatthewMohebbi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_47"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MichaelD.Conover -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MichaelD.Conover">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityCollegeLondon"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_39"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MohammadMehediHassan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MohammadMehediHassan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfCambridge"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_40"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MuhammadAl-Qurishi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MuhammadAl-Qurishi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDarmstadt"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_40"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MykolaHayvanovych -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#MykolaHayvanovych">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfOxford"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#N -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#N">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2001</edition>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2017</edition>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NanWang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NanWang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_46"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NattiyaKanhabua -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NattiyaKanhabua">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_61"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NeilMorris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NeilMorris">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_60"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NelloCristianini -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NelloCristianini">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WeizmannInstituteOfScience"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_52"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NelsonAreal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NelsonAreal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfZurich"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_51"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NemanjaDjuric -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NemanjaDjuric">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_54"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NunoOliveira -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#NunoOliveira">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfLiverpool"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_51"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2013</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PSOSM -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PSOSM">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PanagiotisTakisMetaxas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PanagiotisTakisMetaxas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ITUniversityOfCopenhagen"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_47"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ACMTIT"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2019</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1145/3338855</hasDoi>
+        <pages rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8:20</pages>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_39 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_39">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Singapore"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEETICPSRTIEEETICSC"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1109/PASSAT/SocialCom.2011.34</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_40 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_40">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Beijing"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEA"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2019</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1109/ACCESS.2018.2886314</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_41 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_41">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BuenosAires"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEACMICASNAMASONAM"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1109/ASONAM.2014.6921610</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_42 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_42">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Singapore"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#N"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2001</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.3905/jpm.2001.319822</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_43 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_43">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Barcelona"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#N"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.2308/accr-51865</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_44 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_44">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Singapore"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#S"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1126/science.346.6213.1063</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_45 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_45">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Sydney"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IR"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2013</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1108/IntR-05-2012-0095</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_46 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_46">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Istanbul"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SODA"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1998</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1145/324133.324140</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_47 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_47">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Singapore"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IR"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2013</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1108/IntR-06-2013-0115</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_48 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_48">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Copenhagen"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SLHLT"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2012</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.2200/S00416ED1V01Y201204HLT016</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_49 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_49">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Tokyo"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ESA"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1016/j.eswa.2015.07.052</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_50 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_50">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Beijing"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEECCCWINFOCOMWKSHPS"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1109/INFCOMW.2011.5928903</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_51 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_51">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paris"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ESA"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2017</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1016/j.eswa.2016.12.036</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_52 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_52">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Seoul"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IWCIP"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1109/CIP.2010.5604088</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_53 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_53">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#JCS"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1016/j.jocs.2010.12.007</hasDoi>
+        <pages rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18:30</pages>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_54 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_54">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Singapore"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WSDM"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2012</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1145/2124295.2124358</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_55 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_55">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#BuenosAires"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AAMAS"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2002</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1145/544741.544853</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Barcelona"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEICISI"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1109/ISI.2010.5484757</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_57 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_57">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paris"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#N"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1007/978-3-030-02686-8_29</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_58 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_58">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Barcelona"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#N"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2017</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1257/jep.31.2.211</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_59 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_59">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Brussels"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEEACMICASNAM"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2012</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1109/ASONAM.2012.200</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_60 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_60">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#London"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DSS"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2007</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1016/j.dss.2005.05.019</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_61 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_61">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paris"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PS"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2013</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1371/journal.pone.0079449</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_62 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_62">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Sydney"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SI"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1007/978-3-319-13734-6_16</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_63 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_63">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#DemoPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Seoul"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PSOSM"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2012</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1145/2185354.2185356</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_64 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_64">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Seoul"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#IEEETICPSRTIEEETICSC"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1109/PASSAT/SocialCom.2011.91</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_65 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_65">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#FullPaper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Brussels"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SOMA"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1145/1964858.1964869</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_66 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_66">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Beijing"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#CSUR"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2013</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1145/2501654.2501661</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_67 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_67">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ShortPaper"/>
+        <heldIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Istanbul"/>
+        <publishedIn rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WSDM"/>
+        <fromYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</fromYear>
+        <hasDoi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10.1145/1718487.1718520</hasDoi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paris">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_51"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_57"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_61"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ParthaS.Mohanram -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ParthaS.Mohanram">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBonn"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_43"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PatrickMeier -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PatrickMeier">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDelft"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_62"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PauloCortez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PauloCortez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AarhusUniversity"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_51"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PeterA.Gloor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PeterA.Gloor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ITUniversityOfCopenhagen"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_47"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PeterPirolli -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PeterPirolli">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfWarwick"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_64"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PolitecnicoDiMilano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PolitecnicoDiMilano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PonnurangamKumaraguru -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PonnurangamKumaraguru">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Bar-IlanUniversity"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_62"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_63"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RWTHAachen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RWTHAachen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RajanS.Patel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RajanS.Patel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_52"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RamonSangüesa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RamonSangüesa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WeizmannInstituteOfScience"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_55"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RaziehNokhbehZaeem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RaziehNokhbehZaeem">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PolitecnicoDiMilano"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_2"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_57"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RicardGavaldà -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RicardGavaldà">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#AarhusUniversity"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_59"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RobertEscriva -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RobertEscriva">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TelAvivUniversity"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RobertRoedler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RobertRoedler">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUMunich"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_41"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RoslanIsmail -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RoslanIsmail">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#HebrewUniversityOfJerusalem"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_60"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RossLazarus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#RossLazarus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBonn"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_50"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#S -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#S">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SLHLT -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SLHLT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2012</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SODA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SODA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SOMA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SOMA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SaarlandUniversity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SaarlandUniversity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SaiWu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SaiWu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_39"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SebastianSeeber -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SebastianSeeber">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WeizmannInstituteOfScience"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_41"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Seoul -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Seoul">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_52"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_63"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_64"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SibelAdali -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SibelAdali">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBristol"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Singapore -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Singapore">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_39"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_42"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_44"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_47"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_54"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Ssu-HsinYu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Ssu-HsinYu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDelft"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_50"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SuryaNepal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SuryaNepal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#PolitecnicoDiMilano"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_66"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Sydney -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Sydney">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_45"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_62"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDarmstadt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDarmstadt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDelft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUDelft">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUMunich -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUMunich">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TelAvivUniversity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TelAvivUniversity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Teng-ChiehHuang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Teng-ChiehHuang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ITUniversityOfCopenhagen"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ThienHaiNguyen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ThienHaiNguyen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#SaarlandUniversity"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_49"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Tokyo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Tokyo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#City"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_49"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TomasMikolov -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TomasMikolov">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_53"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversidadeDeLisboa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversidadeDeLisboa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityCollegeLondon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityCollegeLondon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBirmingham -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBirmingham">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBonn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBonn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBremen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBremen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBristol -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfBristol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfCambridge -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfCambridge">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfEdinburgh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfEdinburgh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfLiverpool -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfLiverpool">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfOxford -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfOxford">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfStuttgart -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfStuttgart">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfWarwick -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfWarwick">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfZurich -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversityOfZurich">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#VagelisHristidis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#VagelisHristidis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#EcoleNormaleSuperieure"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_54"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#VasileiosLampos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#VasileiosLampos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TelAvivUniversity"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_52"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_67"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WSDM -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WSDM">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#ConferenceProceedings"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Proceedings"/>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</edition>
+        <edition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</edition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WanitaSherchan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WanitaSherchan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#TUMunich"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_66"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WeizmannInstituteOfScience -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WeizmannInstituteOfScience">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WilliamA.Wallace -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#WilliamA.Wallace">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#UniversidadeDeLisboa"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_56"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Xiao-JunZeng -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Xiao-JunZeng">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <affiliatedWith rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#GrazUniversityOfTechnology"/>
+        <publish rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_53"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#YiannisKompatsiaris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#YiannisKompatsiaris">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Reviewer"/>
+        <reviews rdf:resource="http://www.semanticweb.org/lab3/ontologies/2020/3/researchpublication#Paper_45"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
